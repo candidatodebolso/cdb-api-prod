@@ -1,0 +1,2 @@
+insert into Admin (id, email, firstName, lastName) values (1, 'welsonlimawlsn@gmail.com', 'Welson', 'Teles');
+insert into ApplicationUser (id, password, username, admin_id, voter_id) VALUES (1, '$2a$10$y6IzgxcyxAtEQYKEc5.hguBS4QQ8qrtOqDKzo8XnshwmArC1zeh3a', 'admin', 1, null);

@@ -34,12 +34,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/*/admin/**").hasRole("ADMIN")
                 .antMatchers("/*/voter/**").hasRole("VOTER")
+                .antMatchers("/*/protected/**").hasAnyRole("ADMIN", "VOTER")
                 .and()
                 .addFilter(new JWTAuthenticationFilter(authenticationManager()))
                 .addFilter(new JWTAuthorizationFilter(authenticationManager(), customUserDetailsService));
     }
 
     public static void main(String[] args) {
-        System.out.println(new BCryptPasswordEncoder().encode("123456789"));
+        System.out.println(new BCryptPasswordEncoder().encode("admin"));
     }
 }
